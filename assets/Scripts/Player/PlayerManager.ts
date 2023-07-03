@@ -27,7 +27,12 @@ export class PlayerManager extends Component {
        transform.setContentSize(TILE_WIDTH * 4,TILE_HEIGHT * 4)
 
        this.fsm = this.node.addComponent(PlayerStateMachine)
-       this.fsm.init()
+       console.log(1);
+       
+       await this.fsm.init()
+
+       console.log(2);
+       
        this.fsm.setParamas(PARAMS_NAME_ENUM.IDLE,true)
     //    await this.render()
        

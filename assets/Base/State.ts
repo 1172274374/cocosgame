@@ -18,7 +18,7 @@ export default class State{
 
         const spriteFrames = await promiss;
 
-        this.animationClip = new AnimationClip();
+        this.animationClip = new AnimationClip(); 
         this.animationClip.duration = 1.0; // 整个动画剪辑的周期
         const track  = new animation.ObjectTrack(); // 创建一个对象轨道
 

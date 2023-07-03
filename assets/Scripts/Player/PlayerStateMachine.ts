@@ -9,7 +9,7 @@ type ParamsValueType = boolean | number
 
 export interface IParamsValue{
     type:FSM_PARAM_TYPE_ENUM,
-    value:
+    value:ParamsValueType
 }
 
 export const getInitParamsTrigger = ()=>{
@@ -47,13 +47,14 @@ export class PlayerStateMachine extends Component {
 
     set currentState(newState:State){
         this._currentState = newState
+        this._currentState.run()
     }
 
     async init(){
         this.animateionComponent = this.addComponent(Animation)
 
-        this.initParams()
-        this.initStateMachines()
+        this.initParams()//初始化状态
+        this.initStateMachines()//初始化状态机
 
 
         await Promise.all(this.waitingList)
